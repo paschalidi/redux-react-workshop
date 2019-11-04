@@ -1,21 +1,17 @@
-import React from 'react';
-import {connect} from "react-redux";
+import React from "react";
+import { connect } from "react-redux";
 
-function App({countReducer, dispatch}) {
+function App({ countReducer, dispatch }) {
   return (
     <div>
-      <button onClick={()=>dispatch({type:'COUNT_UP'})}>
-        count me up
+      <button onClick={() => dispatch({ type: "COUNT_UP" })}>add by 1</button>
+      <button onClick={() => dispatch({ type: "COUNT_DOWN" })}>
+        subtract by 1
       </button>
-      <button onClick={()=>dispatch({type:'COUNT_DOWN'})}>
-        count me down
-      </button>
-      <div>
-        {countReducer}
-      </div>
+      <div>{countReducer}</div>
     </div>
   );
 }
 
-const mapsStateToProps = ({countReducer}) => ({countReducer})
+const mapsStateToProps = ({ countReducer }) => ({ countReducer });
 export default connect(mapsStateToProps)(App);
