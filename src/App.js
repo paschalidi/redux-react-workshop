@@ -16,4 +16,5 @@ function App({ countReducer, dispatch }) {
 }
 
 const mapsStateToProps = ({ countReducer }) => ({ countReducer });
+
 export default connect(mapsStateToProps)(App);
